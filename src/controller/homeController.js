@@ -543,7 +543,7 @@ let editttnd = async (req, res) => {
 }
 let postavatar = async (req, res) => {
     var file = req.file.path.split('\\').splice(2).join('/')
-
+    console.log(file,req.body);
 
     await pool.execute('update  account set img =? where id = ?  ', [file, req.body.id]);
     res.redirect('/ttnd')
